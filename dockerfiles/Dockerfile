@@ -1,7 +1,7 @@
 FROM ubuntu:20.04
-LABEL org.opencontainers.image.title="Traversaro's Ubuntu 20.04 blank image with VNC support"
+LABEL org.opencontainers.image.title="JPB's Ubuntu 20.04 blank image with VNC support"
 LABEL org.opencontainers.image.description="Infrastructure for running grasping experiments with the iCub humanoid in Gazebo"
-LABEL org.opencontainers.image.source="https://github.com/traversaro/gitpod-ubuntu-20.04"
+LABEL org.opencontainers.image.source="https://github.com/jpbianchi/gitpod-ubuntu-20.04"  # forked from github.com/traversaro/gitpod-ubuntu-20.04
 LABEL org.opencontainers.image.authors="Silvio Traversaro <silvio.traversaro@iit.it>"
 
 # Non-interactive installation mode
