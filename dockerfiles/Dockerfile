@@ -64,6 +64,20 @@ RUN mkdir -p /home/gitpod/Desktop
 # Switch back to root
 USER root
 
+# ADDED BY JPB
+RUN apt-get update && apt-get install python3.8 && apt-get install iproute2
+
+# docker
+RUN apt-get update && sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common && \
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -  && \
+    add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
+    apt-get update && \
+    apt-get install docker-ce docker-ce-cli containerd.io  && \
+    systemctl status docker  && \
+    service docker start
+
+RUN install_go.sh
+
 # Set up script to launch graphics and vnc
 COPY start-vnc-session.sh /usr/bin/start-vnc-session.sh
 RUN chmod +x /usr/bin/start-vnc-session.sh && \
